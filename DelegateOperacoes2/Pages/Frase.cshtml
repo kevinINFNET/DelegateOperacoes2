@@ -1,0 +1,22 @@
+﻿@page
+@model DelegateOperationsWebApp.Pages.FraseModel
+@{
+    ViewData["Title"] = "Frase com Delegate";
+}
+
+<h2>Transformar Frase</h2>
+<form method="post">
+ <div>
+ <label for="FraseInput">Digite uma frase:</label>
+ <input type="text" asp-for="FraseInput" required />
+</div>
+ <button type="submit">Transformar</button>
+</form>
+@if (!string.IsNullOrEmpty(Model.ResultadoMaiusculas))
+{
+<p>Maiúsculas: @Model.ResultadoMaiusculas</p>
+}
+@if (!string.IsNullOrEmpty(Model.ResultadoMinusculas))
+{
+    <p>Minúsculas: @Model.ResultadoMinusculas</p>
+}
